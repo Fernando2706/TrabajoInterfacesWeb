@@ -1,0 +1,46 @@
+.planetContainer{
+    position: fixed;
+    left: 0;
+    top: 100px;
+    width: 50%;
+    height: 100%;
+    background-image: url("https://www.latercera.com/resizer/R3pb95xktGNvj-10L5RDBohi278=/800x0/smart/arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/RGYLQWSTE5B5PAQPHUQ4GKGQRM.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.planet {
+
+}
+
+.slide-out-bck-tr {
+	-webkit-animation: slide-out-bck-tr 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: slide-out-bck-tr 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@-webkit-keyframes slide-out-bck-tr {
+    0% {
+      -webkit-transform: translateZ(0) translateY(0) translateX(0);
+              transform: translateZ(0) translateY(0) translateX(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateZ(-1100px) translateY(-1000px) translateX(1000px);
+              transform: translateZ(-1100px) translateY(-1000px) translateX(1000px);
+      opacity: 0;
+    }
+}
+@keyframes slide-out-bck-tr {
+    0% {
+      -webkit-transform: translateZ(0) translateY(0) translateX(0);
+              transform: translateZ(0) translateY(0) translateX(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateZ(-1100px) translateY(-1000px) translateX(1000px);
+              transform: translateZ(-1100px) translateY(-1000px) translateX(1000px);
+      opacity: 0;
+    }
+}
+  
