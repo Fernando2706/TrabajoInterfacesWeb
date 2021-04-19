@@ -1,46 +1,85 @@
 .planetContainer{
-    position: fixed;
+    position: absolute;
     left: 0;
-    top: 100px;
-    width: 50%;
+    width: 100%;
     height: 100%;
-    background-image: url("https://www.latercera.com/resizer/R3pb95xktGNvj-10L5RDBohi278=/800x0/smart/arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/RGYLQWSTE5B5PAQPHUQ4GKGQRM.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    overflow: hidden;
 }
 
 .planet {
-
+    position: absolute;
+    left: 20%;
+    top: 45%;
+    transform: translate(-50%);
+    width: 600px;
+    height: 600px;
+    background-image: url("../../image/Tatooine.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
 }
+
+/*
+IM GOING TO MIMIR
+*/
 
 .slide-out-bck-tr {
-	-webkit-animation: slide-out-bck-tr 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-	        animation: slide-out-bck-tr 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	-webkit-animation: slide-out-bck-tr 2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: slide-out-bck-tr 2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
-@-webkit-keyframes slide-out-bck-tr {
+ @-webkit-keyframes slide-out-bck-tr {
     0% {
       -webkit-transform: translateZ(0) translateY(0) translateX(0);
               transform: translateZ(0) translateY(0) translateX(0);
-      opacity: 1;
     }
     100% {
       -webkit-transform: translateZ(-1100px) translateY(-1000px) translateX(1000px);
               transform: translateZ(-1100px) translateY(-1000px) translateX(1000px);
-      opacity: 0;
     }
-}
-@keyframes slide-out-bck-tr {
+  }
+  @keyframes slide-out-bck-tr {
     0% {
       -webkit-transform: translateZ(0) translateY(0) translateX(0);
               transform: translateZ(0) translateY(0) translateX(0);
-      opacity: 1;
     }
     100% {
       -webkit-transform: translateZ(-1100px) translateY(-1000px) translateX(1000px);
               transform: translateZ(-1100px) translateY(-1000px) translateX(1000px);
-      opacity: 0;
     }
+  }
+  
+
+/*
+INCOMING PLANET
+*/
+
+.slide-in-fwd-tl {
+	-webkit-animation: slide-in-fwd-tl 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-fwd-tl 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
+
+ @-webkit-keyframes slide-in-fwd-tl {
+    0% {
+      -webkit-transform: translateZ(-1400px) translateY(-800px) translateX(-1000px);
+              transform: translateZ(-1400px) translateY(-800px) translateX(-1000px);
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateY(0) translateX(0);
+              transform: translateZ(0) translateY(0) translateX(0);
+    }
+  }
+  @keyframes slide-in-fwd-tl {
+    0% {
+      -webkit-transform: translateZ(-1400px) translateY(-800px) translateX(-1000px);
+              transform: translateZ(-1400px) translateY(-800px) translateX(-1000px);
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateY(0) translateX(0);
+              transform: translateZ(0) translateY(0) translateX(0);
+    }
+  }
+  
+  
   

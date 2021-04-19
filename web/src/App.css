@@ -4,7 +4,55 @@
     box-sizing: border-box;
 }
 
-.App{
+.spacecraft{
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    background-image: url("./image/spacecraft.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 100;
+}
+
+.spaceBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("./image/spaceBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.deathStar {
+    position: absolute;
+    top: 43%;
+    left: 3%;
+    width: 120px;
+    height: 120px;
+    transform: rotate(-15deg);
+    background-image: url("./image/deathStar.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.planetBackground {
+    position: absolute;
+    top: 45%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background-image: url("./image/planetBackground.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
 }

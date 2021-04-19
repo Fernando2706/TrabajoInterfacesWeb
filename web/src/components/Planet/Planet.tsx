@@ -1,7 +1,6 @@
-import React, {useState, useEffect, FC} from "react"
+ import React, {useState, useEffect, FC} from "react"
 import "./Planet.css"
 import axios from "axios"
-import compact from "lodash/compact"
 
 interface PlanetProps{
     filter:string
@@ -25,33 +24,31 @@ const Planet: FC<PlanetProps> = (props)=>{
 
     const [data, setData] = useState<PlanetResponse>()
     const [charging, setCharging] = useState<Boolean>(true)
-    const [move, setMove] = useState<Boolean>(false)
-
-    const classPlanet = compact([
-        "planet",
-        move ? "planet slide-out-bck-tr" : "",
-    ]).join(" ")
+    const [classPlanet, setClassPlanet] = useState<string>("planet slide-in-fwd-tl")
 
     useEffect(()=>{
         if(charging===false){
-            setMove(true)
+            setClassPlanet("planet slide-out-bck-tr")
         }
-        axios.get("http://localhost:8000/planets"+props.filter).then((response) =>{
-            setData(response.data)
-        });
+        setTimeout(() => {
+            axios.get("http://localhost:8000/planets/"+props.filter).then((response) =>{
+                setData(response.data)
+            });
+        }, 3000)
     },[props.filter])
 
     useEffect(() => {
         if(data !== null){
-            setMove(false)
             setCharging(false)
+            setClassPlanet("planet slide-in-fwd-tl")
+            console.log(data)
         }
     }, [data])
 
     if(charging) return (<div className="planetContainer">...charging data</div>)
     return(
         <div className="planetContainer">
-            <img src="https://jkhub.org/wiki/images/0/01/Tatooine.png" className={classPlanet}/>
+            <div className={classPlanet}></div>
         </div>
     )
 }

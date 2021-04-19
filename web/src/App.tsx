@@ -12,12 +12,16 @@ function App() {
   const changeFilter = (filter: string) => {
     setFilter(filter)
   }
-
+  
   return (
-    <div className="App">
+    <div >
       <Filter changeFilter={changeFilter}></Filter>
       {filter !== "" && <Planet filter={filter}></Planet>}
       {filter!==""&&<Text filter={filter}></Text>}
+      <div className="spacecraft"></div>
+      <div className="deathStar"></div>
+      <div className="planetBackground"></div>
+      <div className="spaceBackground"></div>
     </div>
   );
 }

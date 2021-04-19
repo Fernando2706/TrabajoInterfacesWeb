@@ -2,6 +2,8 @@
 import {Application} from 'https://deno.land/x/oak@v6.3.1/mod.ts'
 import "https://deno.land/x/dotenv/load.ts"
 // @ts-ignore
+import { oakCors } from "https://deno.land/x/cors/mod.ts";
+// @ts-ignore
 import { MongoClient } from "https://deno.land/x/mongo@v0.12.1/mod.ts"
 // @ts-ignore
 import router from "./routesCenter.ts"
@@ -21,6 +23,12 @@ try{
     client.connectWithUri(DB_URL)
     const db = client.database(DB_NAME)
   
+    app.use(
+      oakCors({
+        origin: "*"
+      }),
+    );
+
     app.use(async (ctx, next) => {
       ctx.state.db = db
       await next();
