@@ -1,6 +1,6 @@
 import {MongoClient} from "https://deno.land/x/mongo@v0.12.1/mod.ts"
 import "https://deno.land/x/dotenv/load.ts"
-import { Database, Collection } from "https://deno.land/x/mongo@v0.12.1/mod.ts";
+import type { Database, Collection } from "https://deno.land/x/mongo@v0.12.1/mod.ts";
 
 interface SData {
     count:    number;
@@ -206,7 +206,7 @@ try{
             ...planet,
             residents: (planet.residents as string[]).map(resident =>Number(resident.split("/").slice(-2)[0])),
             films:     (planet.films as string[]).map(film =>Number(film.split("/").slice(-2)[0])),
-            image_url: "",
+            image_url: "https://fmaitsolutions.es/backend/"+planet.name.replaceAll(" ","_")+".png",
         }
     });
 

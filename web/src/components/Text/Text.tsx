@@ -103,24 +103,26 @@ const Text: FC<TextProps> = (props) => {
     if(charging) return (<div className="textContainer">...charging data</div>)
     else return (
         <div className="textContainer">
-            {peopleData && peopleData.map((person: PeopleData) => {
-                return (
-                    <div className="personContainer">
-                        <div className="imageAndName">
-                            <img src={person.image_url} className="personImage"/>
-                            <p className="personName">{person.name}</p>
+            <div className="container">
+                {peopleData && peopleData.map((person: PeopleData) => {
+                    return (
+                        <div className="personContainer">
+                            <div className="imageAndName">
+                                <img src={person.image_url} className="personImage"/>
+                                <p className="personName">{person.name}</p>
+                            </div>
+                            <p>{}</p>
+                            <div>
+                                {person.films && person.films.map((film) => {
+                                    return (
+                                        <div></div>
+                                    )
+                                })}
+                            </div>
                         </div>
-                        <p>{}</p>
-                        <div>
-                            {person.films && person.films.map((film) => {
-                                return (
-                                    <div></div>
-                                )
-                            })}
-                        </div>
-                    </div>
-                )
-            })}
+                    )
+                })}
+            </div>
         </div>
     )
 }
