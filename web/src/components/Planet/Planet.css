@@ -8,12 +8,9 @@
 
 .planet {
     position: absolute;
-    left: 20%;
+    left: 23%;
     top: 45%;
     transform: translate(-50%);
-    width: 600px;
-    height: 600px;
-    background-image: url("../../image/Tatooine.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
