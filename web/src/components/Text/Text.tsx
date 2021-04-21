@@ -3,7 +3,7 @@ import axios from "axios"
 import "./Text.css"
 
 interface TextProps{
-    filter: string;
+    planetId: number;
 }
 
 interface PlanetResponse{
@@ -89,30 +89,40 @@ interface Starships {
 }
 
 const Text: FC<TextProps> = (props) => {
-
-    const [url, setUrl] = useState<string>("http://localhost:8000/planets/"+props.filter);
-    const [planetData, setPlanetData] = useState<PlanetResponse>()
+    
     const [peopleData, setPeopleData] = useState<PeopleData[]>()
     const [charging, setCharging] = useState<Boolean>(true)
 
     useEffect(() => {
-        axios.get(url).then((response) => {
-            setPlanetData(response.data)
-            if(planetData) {
-                axios.get("http://localhost:8000/people/"+planetData.planets_id).then((response) => {
-                    setPeopleData(response.data)
-                    setCharging(false)
-                })
-            }
+        axios.get("http://localhost:8000/people/"+props.planetId).then((response) => {
+            setPeopleData(response.data)
+            setCharging(false)
         })
-    }, [url])
+    }, [props.planetId])
 
     if(charging) return (<div className="textContainer">...charging data</div>)
     else return (
         <div className="textContainer">
-            {peopleData && peopleData.map((person) => {
-
-            })}
+            <div className="container">
+                {peopleData && peopleData.map((person: PeopleData) => {
+                    return (
+                        <div className="personContainer">
+                            <div className="imageAndName">
+                                <img src={person.image_url} className="personImage"/>
+                                <p className="personName">{person.name}</p>
+                            </div>
+                            <p>{}</p>
+                            <div>
+                                {person.films && person.films.map((film) => {
+                                    return (
+                                        <div></div>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     )
 }

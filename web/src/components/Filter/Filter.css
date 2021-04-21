@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+@font-face {
+    font-family: 'Rubik', sans-serif;
+    src: local('Rubik'), url("../../font/Rubik/Rubik-Regular.ttf") format("truetype");
+}
+
 .filterContainer{
     position: absolute;
     top: 200px;
@@ -13,11 +20,21 @@
     left: 20px;
     width: 200px;
     height: 30px;
-    color: #29d0fd;
-    background-color: black;
+    color: #ffffff;
+    background-color: rgba(41, 208, 253, 0.25);
     border-radius: 5px;
-    border: 1px solid red;
+    border: 2px solid rgba(102, 51, 153, 0.8);
     outline: 0px;
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+}
+
+.inputText:focus{
+    opacity: 0.9;
+}
+
+::placeholder{
+    color: #ffffff;
 }
 
 .filterButton{
@@ -27,14 +44,15 @@
     width: 60px;
     height: 30px;
     color: #29d0fd;
-    background-color: black;
-    border: 1px solid red;
+    background-color: rgba(41, 208, 253, 0.25);
+    border: 2px solid rgba(102, 51, 153, 0.8);
     font-size: 15px;
     outline: 0px;
 }
 
 .filterButton:hover{
     cursor: pointer;
+    opacity: 0.9;
 }
 
 .filterButton:active {

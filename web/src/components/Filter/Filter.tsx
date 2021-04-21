@@ -1,6 +1,7 @@
 import React, {useState, useEffect, FC} from "react"
 import "./Filter.css"
 
+
 interface FilterProps {
     changeFilter: Function;
 }
