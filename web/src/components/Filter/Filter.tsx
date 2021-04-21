@@ -1,6 +1,5 @@
 import React, {useState, useEffect, FC} from "react"
 import "./Filter.css"
-import Sound from "react-sound"
 
 interface FilterProps {
     changeFilter: Function;
