@@ -1,53 +1,57 @@
 .textContainer {
     position: relative;
     left: 1000px;
-    top: 250px;
+    top: 220px;
     width: 370px;
-    height: 430px;
+    height: 485px;
+    border-top: 2px solid rgba(102, 51, 153, 0.5);
+    border-bottom: 2px solid #66339980;
     word-wrap: break-word;
-    border: 2px solid rgba(102, 51, 153, 0.8);
     border-radius: 20px;
-    box-shadow: 0 0 10px rgba(102, 51, 153, 0.2);
     z-index: 100;
     padding: 10px;
 }
+
 .container{
     width: 370px;
     max-height: 100%;
     overflow-y: scroll;
 }
+
 .personContainer {
     overflow-y: auto;
     border-radius: 10px;
     border: 2px solid rgba(102, 51, 153, 0.8);
     padding: 5px;
     margin-bottom: 10px;
-    width: 330px;
-    max-height: 100%;
+    width: 348px;
+    height: fit-content;
     color: white;
 }
 
+.imageAndName {
+    float: left;
+    margin-right: 15px;
+}
+
 .personImage {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
 }
 
 .textContainer::content {
     z-index: 100;
 }
+
 ::-webkit-scrollbar {
     width: 13px;
     height: 13px;
 }
+
 ::-webkit-scrollbar-thumb {
-background: linear-gradient(13deg, #f9d4ff 14%,#c7ceff 64%);
-border-radius: 10px;
+    visibility: hidden;
 }
-::-webkit-scrollbar-thumb:hover{
-background: linear-gradient(13deg, #c7ceff 14%,#f9d4ff 64%);
-}
+
 ::-webkit-scrollbar-track{
-background: #ffffff;
-border-radius: 10px;
-box-shadow: inset 7px 10px 12px #f0f0f0;
+    visibility: hidden;
 }

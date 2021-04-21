@@ -1,23 +1,12 @@
 import React, {useState, useEffect, FC} from "react"
 import axios from "axios"
 import "./Text.css"
+import RingLoader from "react-spinners/RingLoader";
+import { css } from "@emotion/core";
 
 interface TextProps{
     planetId: number;
-}
-
-interface PlanetResponse{
-    planets_id:number,
-    name:string,
-    rotation_period: string,
-    orbital_period:string,
-    diameter: string,
-    climate: string,
-    gravity: string,
-    terrain: string,
-    surface_water:string,
-    population:string,
-    image_url:string,
+    charging: boolean;
 }
 
 interface PeopleData {
@@ -91,39 +80,51 @@ interface Starships {
 const Text: FC<TextProps> = (props) => {
     
     const [peopleData, setPeopleData] = useState<PeopleData[]>()
-    const [charging, setCharging] = useState<Boolean>(true)
+
+    const override = css`
+        position: absolute;
+        top: 400px;
+        left: 1180px;
+        z-index: 100;
+        opacity: 0.6;
+    `;
 
     useEffect(() => {
-        axios.get("http://localhost:8000/people/"+props.planetId).then((response) => {
-            setPeopleData(response.data)
-            setCharging(false)
-        })
+        if(props.planetId !== 0){
+            axios.get("http://localhost:8000/people/"+props.planetId).then((response) => {
+                setPeopleData(response.data)
+            })
+        }
     }, [props.planetId])
 
-    if(charging) return (<div className="textContainer">...charging data</div>)
+    if(props.planetId === 0 && props.charging) return <RingLoader color={"#f9d4ff"} css={override} size={100}/>
+    else if(props.planetId === 0) return <div></div>
+    else if(props.charging) return <RingLoader color={"#f9d4ff"} css={override} size={100}/>
     else return (
-        <div className="textContainer">
-            <div className="container">
-                {peopleData && peopleData.map((person: PeopleData) => {
-                    return (
-                        <div className="personContainer">
-                            <div className="imageAndName">
-                                <img src={person.image_url} className="personImage"/>
-                                <p className="personName">{person.name}</p>
-                            </div>
-                            <p>{}</p>
-                            <div>
-                                {person.films && person.films.map((film) => {
-                                    return (
-                                        <div></div>
-                                    )
-                                })}
-                            </div>
-                        </div>
-                    )
-                })}
-            </div>
-        </div>
+       <div className="textContainer">
+           <div className="container">
+               {peopleData && peopleData.map((person: PeopleData) => {
+                   var personData: string = ""
+                   if(person.height !== "n/a") personData += person.height + " centimeters tall, "
+                   if(person.mass !=="n/a") personData += person.mass + " kg, "
+                   if(person.hair_color !== "n/a") personData += person.hair_color + " hair color, "
+                   if(person.eye_color !== "n/a") personData += person.eye_color + " eye color, "
+                   if(person.skin_color !== "n/a") personData += person.skin_color + " skin color, "
+                   if(person.birth_year !== "n/a") personData += person.birth_year + " is its birth year, "
+                   if(person.gender !== "n/a") personData += " and " + person.gender + " gender."
+                   else personData += " and has no gender."
+                   return (
+                       <div className="personContainer">
+                           <div className="imageAndName">
+                               <img src={person.image_url} className="personImage"/>
+                               <p className="personName">{person.name}</p>
+                           </div>
+                           <p>{personData}</p>
+                       </div>
+                   )
+               })}
+           </div>
+       </div>
     )
 }
 

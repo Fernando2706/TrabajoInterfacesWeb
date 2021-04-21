@@ -23,7 +23,7 @@
     color: #ffffff;
     background-color: rgba(41, 208, 253, 0.25);
     border-radius: 5px;
-    border: 2px solid rgba(102, 51, 153, 0.8);
+    border: 2px solid rgba(102, 51, 153, 0.5);
     outline: 0px;
     font-family: 'Rubik', sans-serif;
     text-align: center;
@@ -43,11 +43,12 @@
     left: 225px;
     width: 60px;
     height: 30px;
-    color: #29d0fd;
-    background-color: rgba(41, 208, 253, 0.25);
-    border: 2px solid rgba(102, 51, 153, 0.8);
-    font-size: 15px;
+    color: #ffffff;
+    background: rgba(41, 208, 253, 0.25);
+    border: 2px solid rgba(102, 51, 153, 0.5);
+    font-size: 13px;
     outline: 0px;
+    border-radius: 5px;
 }
 
 .filterButton:hover{
@@ -56,5 +57,5 @@
 }
 
 .filterButton:active {
-    font-size: 13px;
+    font-size: 12px;
 }

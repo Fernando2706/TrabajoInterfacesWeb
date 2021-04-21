@@ -5,6 +5,7 @@ import axios from "axios"
 interface PlanetProps{
     filter:string;
     changeIdPlanet: Function;
+    changeCharging: Function;
 }
 
 interface PlanetResponse{
@@ -29,6 +30,7 @@ const Planet: FC<PlanetProps> = (props)=>{
 
     useEffect(()=>{
         if(props.filter !== "") {
+            props.changeCharging(true)
             if(charging===false){
                 setClassPlanet("planet slide-out-bck-tr")
             }
@@ -41,15 +43,16 @@ const Planet: FC<PlanetProps> = (props)=>{
     },[props.filter])
 
     useEffect(() => {
-        if(data !== null){
+        if(data){
             props.changeIdPlanet(data?.planets_id)
             setCharging(false)
             setClassPlanet("planet slide-in-fwd-tl")
+            setTimeout(() => props.changeCharging(false), 2200)
         }
     }, [data])
 
     if(charging) return (<div className="planetContainer"></div>)
-    return(
+    else return(
         <div>
             {data?.image_url&&
             <div className="planetContainer">

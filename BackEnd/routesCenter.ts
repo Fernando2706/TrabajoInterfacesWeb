@@ -6,11 +6,14 @@ import { getPeople } from "./controllers/getPeople.ts"
 import { getPlanetName } from "./controllers/getPlanetName.ts"
 // @ts-ignore
 import { getStatus } from "./controllers/status.ts"
+// @ts-ignore
+import { getPlanetById } from './controllers/getPlanetById.ts'
 
 const router = new Router()
 
 router.get("/status", getStatus)
 router.get("/people/:ID", getPeople)
 router.get("/planets/:NAME", getPlanetName)
+router.get("/planet/:ID", getPlanetById)
 
 export {router as default}
