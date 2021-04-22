@@ -193,7 +193,7 @@ try{
             species:    (people.species as string[]).map(species=>Number(species.split("/").slice(-2)[0])),
             vehicles:   (people.vehicles as string[]).map(vehicles=> Number(vehicles.split("/").slice(-2)[0])),
             starships:  (people.starships as string[]).map(starships=>Number(starships.split("/").slice(-2)[0])),
-            image_url:  "",
+            image_url:  "https://fmaitsolutions.es/backend/people/"+people.name.replaceAll(" ","_")+".jpg",
         }
     });
 
