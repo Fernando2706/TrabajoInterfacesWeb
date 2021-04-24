@@ -54,6 +54,7 @@
 .prevButton, .nextButton {
     position: absolute;
     top: 110px;
+    cursor: pointer;
 }
 
 .prevButton {

@@ -78,5 +78,64 @@ INCOMING PLANET
     }
   }
   
-  
-  
+.planetText {
+  position: absolute;
+  top: 260px;
+  left: 440px;
+  width: 490px;
+  height: 0px;
+  border-left: 80px solid transparent;
+  border-bottom: 80px solid rgba(41, 208, 253, 0.25);
+  z-index: 100;
+  opacity: 0.5;
+  overflow: visible;
+}
+
+.rectangle{
+  position: absolute;
+  top: 340px;
+  left: 440px;
+  width: 490px;
+  height: 80px;
+  background-color: rgba(41, 208, 253, 0.25);
+  z-index: 100;
+  opacity: 0.5;
+}
+
+.planetTextInformation {
+  position: absolute;
+  top: 260px;
+  left: 440px;
+  width: 490px;
+  height: fit-content;
+  z-index: 102;
+}
+
+.name{
+  position: absolute;
+  top: 2px;
+  left: 190px;
+  width: min-content;
+  color: black;
+  font-size: 40px;
+  z-index: 102;
+  color: turquoise;
+}
+
+.information {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  top: 75px;
+  left: 10px;
+  width: 450px;
+  z-index: 102;
+  font-size: 15px;
+  overflow: visible;
+  color: white;
+}
+.diameter{
+  opacity: 1;
+}

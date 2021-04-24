@@ -1,7 +1,6 @@
 import React, {useState, useEffect, FC} from "react"
 import "./Filter.css"
 
-
 interface FilterProps {
     changeFilter: Function;
 }
@@ -17,6 +16,7 @@ const Filter: FC<FilterProps> = (props) => {
                 props.changeFilter(text)
                 setText("")
             }}>Buscar</button>
+            
         </div>
     )
 }

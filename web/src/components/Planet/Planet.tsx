@@ -45,9 +45,11 @@ const Planet: FC<PlanetProps> = (props)=>{
     useEffect(() => {
         if(data){
             props.changeIdPlanet(data?.planets_id)
-            setCharging(false)
             setClassPlanet("planet slide-in-fwd-tl")
-            setTimeout(() => props.changeCharging(false), 2200)
+            setTimeout(() => {
+                setCharging(false)
+                props.changeCharging(false)
+            }, 2200)
         }
     }, [data])
 
@@ -57,7 +59,27 @@ const Planet: FC<PlanetProps> = (props)=>{
             {data?.image_url&&
             <div className="planetContainer">
                 <div className={classPlanet} style={{backgroundImage:"url("+data?.image_url+")", width: "450px", height: "450px", borderRadius: "100%"}}></div>
-            </div>
+            </div>}
+            {data?.image_url&&
+                <div className="planetText"></div>
+            }
+            {data?.image_url&&
+                <div className="rectangle"></div>
+            }
+            {data?.image_url&&
+                <div className="planetTextInformation">
+                    <div className="name">{data.name}</div>
+                    <div className="information">
+                        <div className="rotationPeriod">{"Rotation period: "+data.rotation_period}</div>
+                        <div className="orbitalPeriod">{"Orbital period: "+data.orbital_period}</div>
+                        <div className="climate">{"Climate: "+data.climate}</div>
+                        <div className="diameter">{"Diameter: "+data.diameter}</div>
+                        <div className="gravity">{"Gravity: "+data.gravity}</div>
+                        <div className="terrain">{"Terrain: "+data.terrain}</div>
+                        <div className="surfaceWater">{"Suface water: "+data.surface_water}</div>
+                        <div className="population">{"Population: "+data.population}</div>
+                    </div>
+                </div>
             }
         </div>
     )
