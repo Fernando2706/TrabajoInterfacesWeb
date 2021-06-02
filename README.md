@@ -3,14 +3,14 @@ In a far far away galaxy
 
 
 # Pasos para poder ejecutar el trabajo:
-## 1ª Ejecutar el script para cargar los datos en la base de datos:
+## 1ª Ejecutar el script (script/DDBB.ts) para cargar los datos en la base de datos:
   - Para ello se debe crear un archivo .env que tenga los siguientes campos:
     - DB_URL: dirreccion a la base de datos en mongo
     - DB_NAME: nombre de la base de datos
    
-   Una vez ejecutado debera tener los datos que se usan en su base de datos (El script se ejecuta mediante deno)
+   Una vez ejecutado debera tener los datos que se usan en su base de datos (El script se ejecuta mediante deno ´´´deno run --unstable --allow-all DDBB.ts´´´)
 
-## 2º Lanzar el back-end usando deno.
+## 2º Lanzar el back-end usando deno ´´´deno run --unstable --allow-all server.ts´´´.
   - Para ello se debe crear un archivo .env que tenga los siguientes campos:
     - DB_URL: dirreccion a la base de datos en mongo
     - DB_NAME: nombre de la base de datos
