@@ -17,8 +17,8 @@ In a far far away galaxy
     - PORT: numero del puerto (usar el 8000)
 
 ## 3º Lanzar el front-end usando nodejs:
-  - Para ello primero se tiene que instalar las dependencias del proyecto mediante el comando npm install -s
-  - Una vez instalado se debera lanzar el servidor del front-end mediante el comando npm start
+  - Para ello primero se tiene que instalar las dependencias del proyecto mediante el comando ```npm install -s```
+  - Una vez instalado se debera lanzar el servidor del front-end mediante el comando ```npm start```
 
 ## 4º Disfrutar de una experiencia unica en el universo de Star Wars "¡Qué la fuerza te acompañe!"
 
