@@ -21,3 +21,9 @@ In a far far away galaxy
   - Una vez instalado se debera lanzar el servidor del front-end mediante el comando npm start
 
 ## 4º Disfrutar de una experiencia unica en el universo de Star Wars "¡Qué la fuerza te acompañe!"
+
+
+
+## ¿Qué hace el trabajo?
+
+Este proyecto te permite navegar por el universo de star wars y poder comprender mejor que sucede en esta galaxia tan loca. Puedes buscar a que planeta quieres ir, y se enseñara la informacion del planeta y los habitantes que viven en el
