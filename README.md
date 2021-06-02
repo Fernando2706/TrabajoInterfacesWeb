@@ -1,5 +1,6 @@
 # TrabajoInterfacesWeb
 In a far far away galaxy
+## Este trabajo esta desarrollado para un monitor de 1920x1080 y por tanto no es responsivo, por lo que resoluciones menores de 1200px de ancho podra tener problemas al verlo
 
 
 # Pasos para poder ejecutar el trabajo:
